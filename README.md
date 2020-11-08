@@ -5,7 +5,7 @@
 
 Overview
 ---
-This program uses deep neural networks and convolutional neural networks to classify traffic signs. The model is able to classify traffic sign images and was trained and validated using the [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset) with more than 40 classes and 50,000 images in total.
+This program uses deep neural networks and convolutional neural networks to classify traffic signs. The model is able to classify traffic sign images and was trained and validated using the [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset) with 43 classes and more than 40,000 images in total.
 ---
 
 The steps of this project are the following:
@@ -25,3 +25,13 @@ The lab environment can be created with CarND Term1 Starter Kit. Click [here](ht
 
 ### Dataset
 The pickled dataset contains a training, validation and test set. The images are resized to 32x32.
+
+## Model 
+
+### Architecture
+
+I decided to use a deep neural network classifier as a model, which was aforementioned in [Pierre Sermanet's / Yann LeCun's paper](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf). It has __ layers: **__ convolutional layers** for feature extraction and **__ fully connected layer** as a classifier.
+
+<p align="center">
+  <img src="model_architecture.png" alt="Model architecture"/>
+</p>
