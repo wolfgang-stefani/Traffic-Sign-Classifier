@@ -1,6 +1,8 @@
 # Traffic Sign Recognition Program
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
+A deep learning model that learns to recognize traffic signs.
+
 [![IMAGE ALT TEXT HERE](./readme_files/german_traffic_signs.png)](https://www.youtube.com/)
 
 ## Overview
@@ -8,12 +10,25 @@
 This program uses deep neural networks and convolutional neural networks to classify traffic signs. The model is able to classify traffic sign images and was trained and validated using the [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset) with 43 classes and more than 40,000 images in total.
 
 The steps are the following:
-* Load the data set
-* Explore, summarize and visualize the data set
-* Design, train and test a model architecture
-* Use the model to make predictions on new images
-* Analyze the softmax probabilities of the new images
-* Summarize the results with a written report
+* Step 0: Load The Data
+* Step 1: Dataset Summary & Visualization
+  * Summary of the original dataset
+  * Visualization of the original dataset
+  * Data Augmentation
+  * Basic Summary of the augmented dataset
+  * Data preprocessing
+* Step 2: Design a Model Architecture (Deep Learning model)
+* Step 3: Train and Evaluate the Deep Learning model
+  * Tuning hyperparameters
+  * Features and Labels
+  * Training pipeline
+  * Evaluation pipeline
+  * Train and validate the model
+* Step 4: Use the model to make predictions on new images found on the web
+  * Load and Output the Images
+  * Predict the Sign Type for Each Image
+  * Analyze Performance
+  * Analyze the softmax probabilities (output Top 5 Softmax Probabilities) for each image found on the web
 
 ### Dependencies
 This lab requires:
