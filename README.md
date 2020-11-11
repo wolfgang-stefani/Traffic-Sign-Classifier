@@ -83,14 +83,15 @@ Preprocessing refers to techniques such as converting to grayscale, normalizatio
 
 ##### Normalizing
 As a first step, the images are being normalized so that the data has mean zero and equal variance. Normalizing helps the network to converge faster. It makes it a lot easier for the optimizer to proceed numerically:
+
 ![alt text][image11]
 
 For image data, `(pixel - 128)/ 128` is a quick way to approximately normalize the data. It doesn't change the content of the images:
 
 ![alt text][image12]
 
-#### Grayscaling
-As a last step, I grayscaled the image data because ...
+#### Grayscaling (single-channel images)
+As a second step, I grayscaled the image data because using color channels didn't seem to improve things a lot as Pierre Sermanet and Yann LeCun mentioned in [their paper](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf).
 
 Here is an example of a traffic sign image before and after grayscaling.
 
@@ -100,7 +101,7 @@ Here is an example of a traffic sign image before and after grayscaling.
 
 ### Model Architecture (Deep Learning model)
 
-I decided to use a deep neural network classifier as a model, which was aforementioned in [Pierre Sermanet's / Yann LeCun's paper](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf). It has __ layers: **__ convolutional layers** for feature extraction and **__ fully connected layer** as a classifier.
+I decided to use a deep neural network classifier as a model, which was aforementioned in [Pierre Sermanet's / Yann LeCun's paper](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf). It has 4 layers: **2 convolutional layers** for feature extraction and **2 fully connected layers** as a classifier.
 
 <p align="center">
   <img src="model_architecture.png" alt="Model architecture"/>
@@ -113,7 +114,7 @@ I decided to use a deep neural network classifier as a model, which was aforemen
 
 My final model consisted of the following layers:
 
-| Layer         		|     Description	        					| 
+| Layer         		|     Description	        					|       Output dimensions     
 |:---------------------:|:---------------------------------------------:| 
 | Input         		| 32x32x3 RGB image   							| 
 | Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
