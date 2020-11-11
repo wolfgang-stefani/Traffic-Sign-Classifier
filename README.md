@@ -52,7 +52,22 @@ Here is an exploratory visualization of the German Traffic Signs dataset. It is 
 
 Each class (type of traffic sign) is checked, counting its number of samples and plotting 10 random images. As an example, here you can see two classes:
 
-![alt texthehe][image9]
+![alt text][image9]
+
+#### 3. Data augmentation
+
+Augmenting the training set helps improving the model. It makes the model more robust to slight variations, and hence prevents the model from overfitting.
+Augmenting techniques are "cheap tricks" because no additional data needs to be collected and only a small mount on additional computing resources are needed but performance can significantly be improved.
+
+##### Flipping
+
+Signs like "Ahead Only" are horizontally and/or vertically symmetrical. These can be simply flipped, which would allow us to get twice as much data for these classes.
+
+Other signs like "Turn right ahead" and "Turn left ahead" are some kind of interchageable pairs. These can in a first step be flipped and then be assigned to the corresponding, pairing class. In this case the number of samples could be increased by a factor of around 4.
+
+##### Translation, scaling (zoom) and rotation
+
+CNNs have built-in invariance to small translations, scaling and rotations. The training doesn't contain such mutations, so we will add those. In this project we implement rotation.
 
 ### Model Architecture (Deep Learning model)
 
