@@ -56,26 +56,42 @@ Each class (type of traffic sign) is checked, counting its number of samples and
 
 #### 3. Data augmentation
 
-Augmenting the training set helps improving the model. It makes the model more robust to slight variations, and hence prevents the model from overfitting.
+Augmenting the training set (=generating additional data) helps improving the model. It makes the model more robust to slight variations, and hence prevents the model from overfitting.
 Augmenting techniques are "cheap tricks" because no additional data needs to be collected and only a small mount on additional computing resources are needed but performance can significantly be improved.
 
-Augmentation techniques can be Flipping, translation, scaling (zoom), rotation and many more.
+Augmentation techniques can be Flipping, translation, scaling (zoom), rotation and many more. To add more data to the the dataset, I used the rotation technique because it is quite simple to implements but triples the amount of data in my solution. 
 
 ##### Flipping
 
-Signs like "Ahead Only" are horizontally and/or vertically symmetrical. These can be simply flipped, which would allow us to get twice as much data for these classes.
+Flipping is another augmentation technique, which was not implemented but illustrates well the general method of augmenting. Signs like "Ahead Only" are horizontally and/or vertically symmetrical. These can be simply flipped, which would allow us to get twice as much data for these classes.
 
 Other signs like "Turn right ahead" and "Turn left ahead" are some kind of interchageable pairs. These can in a first step be flipped and then be assigned to the corresponding, pairing class. In this case the number of samples could be increased by a factor of around 4.
 
 ##### Translation, scaling (zoom) and rotation
 
-CNNs have built-in invariance to small translations, scaling and rotations. The training doesn't contain such mutations, so we will add those. In this project we implement rotation. To demonstrate visually what rotation means, here I have picked one random image:
+CNNs have built-in invariance to small translations, scaling and rotations. The training doesn't contain such mutations, so we will add those. In this project we implement rotation. To demonstrate visually what rotation means, here is an example of an random original image and its augmented counterparts:
 
 ![alt text][image10]
 
 Each image from the training set has been rotated like this resulting in a 3x wider training set:
 
 * The size of the new, augmented training set is 104,397.
+
+#### 4. Data Preprocessing
+
+Preprocessing refers to techniques such as converting to grayscale, normalization, etc.
+
+As a first step, I the images are being converted to grayscale because ...
+
+Here is an example of a traffic sign image before and after grayscaling.
+
+![alt text][image2]
+
+As a last step, I normalized the image data because ...
+
+
+
+---
 
 ### Model Architecture (Deep Learning model)
 
@@ -85,25 +101,7 @@ I decided to use a deep neural network classifier as a model, which was aforemen
   <img src="model_architecture.png" alt="Model architecture"/>
 </p>
 
-#### 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
 
-As a first step, I decided to convert the images to grayscale because ...
-
-Here is an example of a traffic sign image before and after grayscaling.
-
-![alt text][image2]
-
-As a last step, I normalized the image data because ...
-
-I decided to generate additional data because ... 
-
-To add more data to the the data set, I used the following techniques because ... 
-
-Here is an example of an original image and an augmented image:
-
-![alt text][image3]
-
-The difference between the original data set and the augmented data set is the following ... 
 
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
