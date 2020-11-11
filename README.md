@@ -81,7 +81,9 @@ Each image from the training set has been rotated like this resulting in a 3x wi
 
 Preprocessing refers to techniques such as converting to grayscale, normalization, etc.
 
-As a first step, I the images are being converted to grayscale because ...
+As a first step, the images are being normalized so that the data has mean zero and equal variance. Normalizing helps the network to converge faster. It makes it a lot easier for the optimizer to proceed numerically. For image data, `(pixel - 128)/ 128` is a quick way to approximately normalize the data. It doesn't change the content of the images. This leads to a well conditioned problem:
+
+![alt text][image11]
 
 Here is an example of a traffic sign image before and after grayscaling.
 
@@ -204,4 +206,5 @@ For the second image ...
 [image8]: ./examples/placeholder.png "Traffic Sign 5"
 [image9]: ./examples/two_classes.jpg "Two Classes"
 [image10]: ./examples/rotation.jpg "Rotation"
+[image11]: ./examples/Normalized_inputs.jpg "Normalized Inputs"
 
