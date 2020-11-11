@@ -59,6 +59,8 @@ Each class (type of traffic sign) is checked, counting its number of samples and
 Augmenting the training set helps improving the model. It makes the model more robust to slight variations, and hence prevents the model from overfitting.
 Augmenting techniques are "cheap tricks" because no additional data needs to be collected and only a small mount on additional computing resources are needed but performance can significantly be improved.
 
+Augmentation techniques can be Flipping, translation, scaling (zoom), rotation and many more.
+
 ##### Flipping
 
 Signs like "Ahead Only" are horizontally and/or vertically symmetrical. These can be simply flipped, which would allow us to get twice as much data for these classes.
@@ -67,7 +69,13 @@ Other signs like "Turn right ahead" and "Turn left ahead" are some kind of inter
 
 ##### Translation, scaling (zoom) and rotation
 
-CNNs have built-in invariance to small translations, scaling and rotations. The training doesn't contain such mutations, so we will add those. In this project we implement rotation.
+CNNs have built-in invariance to small translations, scaling and rotations. The training doesn't contain such mutations, so we will add those. In this project we implement rotation. To demonstrate visually what rotation means, here I have picked one random image:
+
+![alt text][image10]
+
+Each image from the training set has been rotated like this resulting in a 3x wider training set:
+
+* The size of the new, augmented training set is 104,397.
 
 ### Model Architecture (Deep Learning model)
 
@@ -197,3 +205,5 @@ For the second image ...
 [image7]: ./examples/placeholder.png "Traffic Sign 4"
 [image8]: ./examples/placeholder.png "Traffic Sign 5"
 [image9]: ./examples/two_classes.jpg "Two Classes"
+[image10]: ./examples/rotation.jpg "Rotation"
+
