@@ -8,6 +8,9 @@ A deep learning model that learns to recognize traffic signs.
 ## Overview
 
 This program uses deep neural networks and convolutional neural networks to classify traffic signs. The model is able to classify traffic sign images and was trained and validated using the [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset) with 43 classes and more than 40,000 images in total.
+The pickled dataset contains a training, validation and test set. The images are resized to 32x32.
+
+Here is a link to the [project code](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
 
 The steps are the following:
 * Step 0: Load The Data
@@ -30,15 +33,6 @@ The steps are the following:
   * Analyze Performance
   * Analyze the softmax probabilities (output Top 5 Softmax Probabilities) for each image found on the web
 
-### Dependencies
-This lab requires:
-
-* [CarND Term1 Starter Kit](https://github.com/udacity/CarND-Term1-Starter-Kit)
-
-The lab environment can be created with CarND Term1 Starter Kit. Click [here](https://github.com/udacity/CarND-Term1-Starter-Kit/blob/master/README.md) for the details.
-
-### Dataset
-The pickled dataset contains a training, validation and test set. The images are resized to 32x32.
 
 ## Model 
 
@@ -62,7 +56,6 @@ I decided to use a deep neural network classifier as a model, which was aforemen
 [image8]: ./examples/placeholder.png "Traffic Sign 5"
 
 ---
-Here is a link to the [project code](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
 
 ### Data Set Summary & Exploration
 
