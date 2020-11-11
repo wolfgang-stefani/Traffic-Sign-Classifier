@@ -206,5 +206,4 @@ For the second image ...
 [image8]: ./examples/placeholder.png "Traffic Sign 5"
 [image9]: ./examples/two_classes.jpg "Two Classes"
 [image10]: ./examples/rotation.jpg "Rotation"
-[image11]: ./examples/Normalized_inputs.jpg "Normalized Inputs"
-
+[image11]: ./examples/Normalized_problem.jpg "Normalized Inputs"
