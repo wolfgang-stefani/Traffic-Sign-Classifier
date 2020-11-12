@@ -101,7 +101,7 @@ Here is an example of a traffic sign image before and after grayscaling.
 
 ### Model Architecture (Deep Learning model)
 
-I decided to use a deep neural network classifier as a model, which was aforementioned in [Pierre Sermanet's / Yann LeCun's paper](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf). It has 5 layers: **3 convolutional layers** for feature extraction and **2 fully connected layers**. The last one is the classifier.
+I decided to use a deep neural network classifier as a model, which was described in [Pierre Sermanet's / Yann LeCun's paper](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf). It has 5 layers: **3 convolutional layers** for feature extraction and **2 fully connected layers**. The last one is the classifier.
 
 ![alt text][image13]
 
