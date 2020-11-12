@@ -212,3 +212,4 @@ For the second image ...
 [image10]: ./examples/rotation.jpg "Rotation"
 [image11]: ./examples/Normalized_problem.jpg "Normalized Inputs"
 [image12]: ./examples/Normalizing_images.jpg "Normalizing Images"
+[image13]: ./examples/convnet.jpg "Convnet"
