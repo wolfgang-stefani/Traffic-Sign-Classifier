@@ -47,7 +47,8 @@ The steps are the following:
 #### 2. Visualization of the original dataset
 
 Here is an exploratory visualization of the German Traffic Signs dataset. 
-First, a bar chart showing how the training samples are distributed across the classes.
+
+First, a bar chart showing how the training samples are distributed across the classes:
 
 ![alt text][image1]
 
@@ -104,34 +105,27 @@ Here is an example of a traffic sign image before and after grayscaling.
 
 ### Model Architecture (Deep Learning model)
 
-As a starting point, I decided to use a convolutional neural network architecture known as LeNet-5 and similarly implemented in [Pierre Sermanet's / Yann LeCun's paper](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf). LeNet-5 consists of 6 layers (if you do not count input and output as a layer). 
-After several steps of development and testing different hyperparameters, my convolutional neural network classifier consists of 8 layers: **3 convolutional layers** and **3 subsampling/pooling layers** for feature extraction and **2 fully connected layers**.
+As a starting point, I decided to use a convolutional neural network architecture known as LeNet-5 and similarly implemented in [Pierre Sermanet's / Yann LeCun's paper](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf). LeNet-5 consists of 6 layers (C1, S2, C3, S4, C5, F6) if you do not count input and output as a layer:
+
+![alt text][image14]
+
+A problem with this initial architecture is overfitting - a high accuracy on the training set but low accuracy on the validation set.
+
+After an iterative approach consisting of several steps of testing different layers and hyperparameters, my convolutional neural network classifier consists of 8 layers: **3 convolutional layers**, **3 subsampling/pooling layers** and **2 fully connected layers**:
 
 ![alt text][image13]
 
+In comparison to LeNet, the **learning rate** is reduced from 0,001 to 0,0005. A higher learning rate does not mean to learn more and faster. In fact you get to a better model with low loss faster with a low learning rate.
+**Epochs** are changed from 10 to 50. An epoch is a single pass of the whole dataset through the model used to increase the accuracy of the model without requiring more data. It is importan to chose the right number of epochs.
+
+For reducing overfitting, the regularization technique dropout is implemented with `keep_prob` set to 0,7. 
+
 The code of the model can be found in the [project's IPython notebook](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb) in the first cell right under the headline "Step 2: Design a Model Architecture (Deep Learning model)".
 
-#### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
-
-
-
-My final model results were:
-* training set accuracy of 98,1% (see code line __)
+The results of the final model are:
+* training set accuracy of 98,1%
 * validation set accuracy of 99,9%
 * test set accuracy of ?
-
-If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-* What were some problems with the initial architecture?
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
-
-If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
- 
 
 ### Test a Model on New Images
 
@@ -194,3 +188,4 @@ For the second image ...
 [image11]: ./examples/Normalized_problem.jpg "Normalized Inputs"
 [image12]: ./examples/Normalizing_images.jpg "Normalizing Images"
 [image13]: ./examples/convnet.jpg "Convnet"
+[image14]: ./examples/convnet.jpg "LeNet-5.png"
