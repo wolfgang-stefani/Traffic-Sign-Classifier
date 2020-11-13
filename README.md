@@ -46,11 +46,14 @@ The steps are the following:
 
 #### 2. Visualization of the original dataset
 
-Here is an exploratory visualization of the German Traffic Signs dataset. It is a bar chart showing how the data is distributed across the classes.
+Here is an exploratory visualization of the German Traffic Signs dataset. 
+First, a bar chart showing how the training samples are distributed across the classes.
 
 ![alt text][image1]
 
-Each class (type of traffic sign) is checked, counting its number of samples and plotting 10 random images. As an example, here you can see two classes:
+Some classes are highly **underrepresented**. Some only have 200 samples or even less, which is not enough for most of the models to perform well. The training samples are also fairly unbalanced which means some classes are represented to significantly lower extent than others. This will be fixed with **Data augmentation** (next rubric).
+
+Additionally to the bar char chart above, for each class (type of traffic sign) 10 random images are plotted. As an example, here you can see two classes:
 
 ![alt text][image9]
 
@@ -101,14 +104,19 @@ Here is an example of a traffic sign image before and after grayscaling.
 
 ### Model Architecture (Deep Learning model)
 
-I decided to use a deep neural network classifier as a model, which was described in [Pierre Sermanet's / Yann LeCun's paper](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf). It has 5 layers: **3 convolutional layers** for feature extraction and **2 fully connected layers**. The last one is the classifier.
+As a starting point, I decided to use a convolutional neural network architecture known as LeNet-5 and similarly implemented in [Pierre Sermanet's / Yann LeCun's paper](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf). LeNet-5 consists of 6 layers (if you do not count input and output as a layer). 
+After several steps of development and testing different hyperparameters, my convolutional neural network classifier consists of 8 layers: **3 convolutional layers** and **3 subsampling/pooling layers** for feature extraction and **2 fully connected layers**.
 
 ![alt text][image13]
 
+The code of the model can be found in the [project's IPython notebook](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb) in the first cell right under the headline "Step 2: Design a Model Architecture (Deep Learning model)".
+
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
+
+
 My final model results were:
-* training set accuracy of 98,1%
+* training set accuracy of 98,1% (see code line __)
 * validation set accuracy of 99,9%
 * test set accuracy of ?
 
