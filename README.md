@@ -125,7 +125,7 @@ The code of the model can be found in the [project's IPython notebook](https://g
 The results of the final model are:
 * training set accuracy of 98,1%
 * validation set accuracy of 99,9%
-* test set accuracy of ?
+* test set accuracy of 95,6%
 
 ### Test a Model on New Images
 
