@@ -129,46 +129,57 @@ The results of the final model are:
 
 ### Test a Model on New Images
 
-#### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
+#### 1. Five German traffic signs found on the web
 
 Here are five German traffic signs that I found on the web:
 
 ![alt text][image4] ![alt text][image5] ![alt text][image6] 
 ![alt text][image7] ![alt text][image8]
 
-The first image might be difficult to classify because ...
+The first image might be difficult to classify because the environment is very restless and part of a round sign can be seen at the lower end.
+Second and third image are quite clear but have two stickers that do not belong there and could make classification difficult.
+The fourth traffic sign ("right-of-way at the next intersection") has large bullet holes and the paint is peeling off. That could seriously affect the forecast.
+The last traffic sign is clearly visible and should be  recognizable without any issues.
 
-#### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
+#### 2. Model's predictions on these new traffic signs
 
 Here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| Road Work      		| Road Work   									| 
+| Yield     			| Yield 										|
+| Priority Road					| Priority Road											|
+| Right-of-way at next intersection	      		| Priority Road					 				|
+| Speed limit 30 km/h			| Speed limit 30 km/h      							|
 
+The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This does not compare favorably to the accuracy on the test set of 95,6%. The reason is that an incorrectly classified image increases the inaccuracy by 20% with only 5 images in total.
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+#### 3. Model's certainty (top 5 softmax probabilities for each image along with the sign type of each probability)
 
-#### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
-
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
+The code for making predictions on my final model is located in the second last cell of the Ipython notebook.
 
 For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+| 1.0         			| Road work   									| 
+| 1.0     				| Yield 										|
+| 1.0					| Priority Road											|
+| 99.19	      			| Priority Road					 				|
+| 1.0				    | Speed limit 30 km/h      							|
 
+The model has 100% certainty for all images but the the "right-of-way at next intersection" which indeed was incorrectly classified as a "priority road" sign which is not the same. Let's have a closer look on the top 5 softmax probabilities of the incorrectly classified traffic sign:
 
-For the second image ... 
+| Probability (top-down)        	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 99.1975844         			| Priority road   									| 
+| 0.0074162608     				| Right-of-way at the next intersection 										|
+| 0.0006079752					| Beware of ice/snow											|
+| 0.0000000102	      			| Traffic signals					 				|
+| 0.0000000006				    | Roundabout mandatory     							|
+
+The model is quite certain, namely with 99.19% certainty that the image shows a "priority road" sign. As a human we can definitely say this is wrong. But why is the model so certain about it? Weiter untersuchen: Ursache klären! Class distrbution anschauen von der richtigen und falschen Klasse. Vielleicht liegt es daran. 
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
