@@ -116,16 +116,16 @@ After an iterative approach consisting of several steps of testing different lay
 ![alt text][image14]
 
 In comparison to LeNet, the **learning rate** is reduced from 0,001 to 0,0005. A higher learning rate does not mean to learn more and faster. In fact you get to a better model with low loss faster with a low learning rate.
-**Epochs** are changed from 10 to 50. An epoch is a single pass of the whole dataset through the model used to increase the accuracy of the model without requiring more data. It is importan to chose the right number of epochs.
+**Epochs** are changed from 10 to 50. An epoch is a single pass of the whole dataset through the model used to increase the accuracy of the model without requiring more data. It is important to chose a good suitable of epochs.
 
 For reducing overfitting, the regularization technique dropout is implemented with `keep_prob` set to 0,7. 
 
 The code of the model can be found in the [project's IPython notebook](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb) in the first cell right under the headline "Step 2: Design a Model Architecture (Deep Learning model)".
 
 The results of the final model are:
-* training set accuracy of 98,1%
-* validation set accuracy of 99,9%
+* validation set accuracy of 98,1%
 * test set accuracy of 95,6%
+* (training set accuracy of 99,9%)
 
 ### Test a Model on New Images
 
