@@ -107,13 +107,13 @@ Here is an example of a traffic sign image before and after grayscaling.
 
 As a starting point, I decided to use a convolutional neural network architecture known as LeNet-5 and similarly implemented in [Pierre Sermanet's / Yann LeCun's paper](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf). LeNet-5 consists of 6 layers (C1, S2, C3, S4, C5, F6) if you do not count input and output as a layer:
 
-![alt text][image14]
+![alt text][image13]
 
 A problem with this initial architecture is overfitting - a high accuracy on the training set but low accuracy on the validation set.
 
 After an iterative approach consisting of several steps of testing different layers and hyperparameters, my convolutional neural network classifier consists of 8 layers: **3 convolutional layers**, **3 subsampling/pooling layers** and **2 fully connected layers**:
 
-![alt text][image13]
+![alt text][image14]
 
 In comparison to LeNet, the **learning rate** is reduced from 0,001 to 0,0005. A higher learning rate does not mean to learn more and faster. In fact you get to a better model with low loss faster with a low learning rate.
 **Epochs** are changed from 10 to 50. An epoch is a single pass of the whole dataset through the model used to increase the accuracy of the model without requiring more data. It is importan to chose the right number of epochs.
@@ -187,5 +187,5 @@ For the second image ...
 [image10]: ./examples/rotation.jpg "Rotation"
 [image11]: ./examples/Normalized_problem.jpg "Normalized Inputs"
 [image12]: ./examples/Normalizing_images.jpg "Normalizing Images"
-[image13]: ./examples/convnet.jpg "Convnet"
-[image14]: ./examples/convnet.jpg "LeNet-5.png"
+[image13]: ./examples/convnet.jpg "LeNet-5.png"
+[image14]: ./examples/convnet.jpg "Convnet"
