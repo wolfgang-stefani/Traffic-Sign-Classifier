@@ -124,10 +124,10 @@ The code of the model can be found in the [project's IPython notebook](https://g
 
 The results of the final model are:
 * validation set accuracy of 98,1%
-* test set accuracy of 95,6%
+* test set accuracy of 96,2%
 * (training set accuracy of 99,9%)
 
-### Test a Model on New Images
+### Test the Model on New Images
 
 #### 1. Five German traffic signs found on the web
 
@@ -153,11 +153,15 @@ Here are the results of the prediction:
 | Right-of-way at next intersection	      		| Priority Road					 				|
 | Speed limit 30 km/h			| Speed limit 30 km/h      							|
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This does not compare favorably to the accuracy on the test set of 95,6%. The reason is that an incorrectly classified image increases the inaccuracy by 20% with only 5 images in total.
+The model was able to correctly classify 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of 95,6%. The difference of 15,6% is not meaningful. It's only because one incorrectly classified out of five images in total worsens the accuracy by 20%.
 
 #### 3. Model's certainty (top 5 softmax probabilities for each image along with the sign type of each probability)
 
-The code for making predictions on my final model is located in the second last cell of the Ipython notebook.
+The code for making predictions on my final model is located in the third last cell of the Ipython notebook when "evaluate(X_custom, y_custom)" is called. The results can be printed out readable using [`tf.nn.top_k`](https://www.tensorflow.org/versions/r0.12/api_docs/python/nn.html#top_k): 
+
+For each of the new images, the model's softmax probabilities are printed out to show the **certainty** of the model's predictions.
+
+`tf.nn.top_k` returns the values and indices (class IDs) of the top k predictions. So if k=5, it'll return the 5 largest probabilities (out of a possible 43) and the corresponding class IDs for each sign.
 
 For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
 
@@ -179,10 +183,7 @@ The model has 100% certainty for all images but the the "right-of-way at next in
 | 0.0000000102	      			| Traffic signals					 				|
 | 0.0000000006				    | Roundabout mandatory     							|
 
-The model is quite certain, namely with 99.19% certainty that the image shows a "priority road" sign. As a human we can definitely say this is wrong. But why is the model so certain about it? Weiter untersuchen: Ursache klären! Class distrbution anschauen von der richtigen und falschen Klasse. Vielleicht liegt es daran. 
-
-### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
-#### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
+The model is quite certain, namely with 99.19% certainty that the image shows a "priority road" sign. As a human we can definitely say this is wrong. From this we learn that a probability below 100%, even if it is very low, must always be questioned.
 
 [//]: # (Image References)
 
