@@ -1,4 +1,4 @@
-# Traffic Sign Recognition Program
+# Traffic Sign Recognizer
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
 A deep learning model that learns to recognize traffic signs.
@@ -7,7 +7,8 @@ A deep learning model that learns to recognize traffic signs.
 
 ## Overview
 
-This program uses deep neural networks and convolutional neural networks to classify traffic signs. The model is able to classify traffic sign images and was trained and validated using the [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset) with 43 classes and more than 40,000 images in total.
+This program uses a deep neural network with several convolutional layers to classify traffic signs. The model is able to recognize traffic signs with an accuracy of 96,2%. It was trained and validated with images from the [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset) with 43 classes and more than 50,000 images in total.
+
 The pickled dataset contains a training, validation and test set. The images are resized to 32x32.
 
 Here is a link to the [project code](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
