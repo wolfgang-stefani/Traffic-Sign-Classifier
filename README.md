@@ -7,7 +7,7 @@ A deep learning model that learns to recognize traffic signs.
 
 ## Overview
 
-The full code can be found in this [IPython Notebook.](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
+The full code can be found in this [IPython Notebook.](https://github.com/wolfgang-stefani/Traffic-Sign-Classifier/blob/main/Traffic_Sign_Classifier.ipynb)
 
 This program uses a deep neural network with several convolutional layers to classify traffic signs. The model is able to recognize traffic signs with an accuracy of 96,2%. It was trained and validated with images from the [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset) with 43 classes and more than 50,000 images in total.
 
