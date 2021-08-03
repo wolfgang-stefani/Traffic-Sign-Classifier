@@ -116,7 +116,7 @@ After an iterative approach consisting of several steps of testing different lay
 ![alt text][image14]
 
 In comparison to LeNet, the **learning rate** is reduced from 0,001 to 0,0005. A higher learning rate does not mean to learn more and faster. In fact you get to a better model with low loss faster with a low learning rate.
-**Epochs** are changed from 10 to 50. An epoch is a single pass of the whole dataset through the model used to increase the accuracy of the model without requiring more data. It is important to chose a good suitable of epochs.
+**Epochs** are changed from 10 to 50. An epoch is a single pass of the whole dataset through the model used to increase the accuracy of the model without requiring more data. It is important to chose a suitable number of epochs.
 
 For reducing overfitting, the regularization technique dropout is implemented with `keep_prob` set to 0,7. 
 
