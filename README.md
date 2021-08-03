@@ -61,9 +61,9 @@ Additionally to the bar char chart above, for each class (type of traffic sign) 
 #### 3. Data augmentation
 
 Augmenting the training set (=generating additional data) helps improving the model. It makes the model more robust to slight variations, and hence prevents the model from overfitting.
-Augmenting techniques are "cheap tricks" because no additional data needs to be collected and only a small mount on additional computing resources are needed but performance can significantly be improved.
+Augmenting techniques are "cheap tricks" because no additional data needs to be collected. Only a small amount of additional computing resources is needed for improving the performance significantly.
 
-Augmentation techniques can be Flipping, translation, scaling (zoom), rotation and many more. To add more data to the the dataset, I used the rotation technique because it is quite simple to implements but triples the amount of data in my solution. 
+Augmentation techniques can be Flipping, translation, scaling (zoom), rotation and many more. To add more data to the the dataset, I used the rotation technique because it is quite simple to implement but triples the amount of data in my solution. 
 
 ##### Flipping
 
@@ -163,7 +163,7 @@ For each of the new images, the model's softmax probabilities are printed out to
 
 `tf.nn.top_k` returns the values and indices (class IDs) of the top k predictions. So if k=5, it'll return the 5 largest probabilities (out of a possible 43) and the corresponding class IDs for each sign.
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+The top five soft max probabilities were:
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
@@ -183,7 +183,7 @@ The model has 100% certainty for all images but the the "right-of-way at next in
 | 0.0000000102	      			| Traffic signals					 				|
 | 0.0000000006				    | Roundabout mandatory     							|
 
-The model is quite certain, namely with 99.19% certainty that the image shows a "priority road" sign. As a human we can definitely say this is wrong. From this we learn that a probability below 100%, even if it is very low, must always be questioned.
+The model is quite certain, namely with 99.19% certainty that the image shows a "priority road" sign. As a human we can definitely say this is wrong. From this we learn that a probability below 100% always needs to be questioned - even if it is very close to 100%.
 
 [//]: # (Image References)
 
