@@ -120,7 +120,7 @@ In comparison to LeNet, the **learning rate** is reduced from 0,001 to 0,0005. A
 
 For reducing overfitting, the regularization technique dropout is implemented with `keep_prob` set to 0,7. 
 
-The code of the model can be found in the [project's IPython notebook](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb) in the first cell right under the headline "Step 2: Design a Model Architecture (Deep Learning model)".
+The code of the model can be found in the [project's IPython notebook](https://github.com/wolfgang-stefani/Traffic-Sign-Classifier/blob/main/Traffic_Sign_Classifier.ipynb) in the first cell right under the headline "Step 2: Design a Model Architecture (Deep Learning model)".
 
 The results of the final model are:
 * validation set accuracy of 98,1%
