@@ -105,7 +105,7 @@ Here is an example of a traffic sign image before and after grayscaling.
 
 ### Model Architecture (Deep Learning model)
 
-As a starting point, I decided to use a convolutional neural network architecture known as LeNet-5 and similarly implemented in [Pierre Sermanet's / Yann LeCun's paper](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf). LeNet-5 consists of 6 layers (C1, S2, C3, S4, C5, F6) if you do not count input and output as a layer:
+As a starting point, I decided to use a convolutional neural network architecture known as LeNet-5 (similarly implemented in [Pierre Sermanet's / Yann LeCun's paper](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf)). LeNet-5 consists of 6 layers (C1, S2, C3, S4, C5, F6). Here, you do not count input and output as a layer:
 
 ![alt text][image13]
 
